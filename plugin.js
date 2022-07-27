@@ -1,7 +1,7 @@
 /*
  * @Author: chenpan
  * @Date: 2022-07-26 15:25:55
- * @LastEditTime: 2022-07-26 21:46:44
+ * @LastEditTime: 2022-07-27 11:07:10
  * @LastEditors: chenpan
  * @Description: 
  * @FilePath: /rich/plugin.js
@@ -12,9 +12,11 @@ module.exports = function (babel) {
     return {
         name: "ast-transform", // not required
         visitor: {
-            Identifier: function (path) {
-                path.node.name = path.node.name.split("").reverse().join("");
-            }
+            // StringLiteral: function (path) {
+            //     if (path.node.value !== 'operationId') return
+            //     path.node.value = '111'
+            //     // path.findParent((path) => path.node.value)
+            // }
         }
     };
 }
